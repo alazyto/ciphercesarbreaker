@@ -3,21 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caesar Cipher Breaker</title>
+    <title>Automatic Caesar Cipher Breaker</title>
     <style>
-        /* Your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        #text, #shift {
+            margin-bottom: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        #guesses {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .bar {
+            background-color: #4CAF50;
+            height: 15px;
+            margin-top: 5px;
+        }
+
+        .active {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body>
-    <h2>Caesar Cipher Breaker</h2>
+    <h2>Automatic Caesar Cipher Breaker</h2>
     <label for="text">Cipher Text:</label>
-    <textarea id="text" placeholder="Enter the cipher text"></textarea><br>
-    <label for="shift">Shift:</label>
-    <span id="shift"></span><br>
+    <textarea id="text" placeholder="Enter the cipher text">GUVF VF FBZR FNZCYR GRKG URER.</textarea><br>
+    <label for="shift">Shift: <span id="shift">Up</span></label><br>
     <button onclick="app.doBreak()">Break Code</button>
     <button onclick="app.doClear()">Clear</button><br>
     <div id="guesses"></div>
 
-    <script src="main.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
