@@ -21,12 +21,12 @@ textarea {
 }
 
 #guesses tr.active div.bar {
-    background: #60A0FF;
+    background: #ffffff;
 }
 
 #guesses div.bar {
     height: 1em;
-    background: #80C0FF;
+    background: #fafafa;
 }
 
 #guesses tr.active {
