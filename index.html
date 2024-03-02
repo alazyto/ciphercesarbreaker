@@ -1,70 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automatic Caesar Cipher Breaker</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-        }
+    <title>Auto Ceasar Cipher Breaker</title>
 
-        h2 {
-            color: #333;
-        }
-
-        #text, #shift {
-            margin-bottom: 10px;
-            padding: 8px;
-            font-size: 16px;
-        }
-
-        button {
-            padding: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-right: 10px;
-        }
-
-        #guesses {
-            margin-top: 20px;
-            text-align: left;
-        }
-
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-
-        .bar {
-            background-color: #4CAF50;
-            height: 15px;
-            margin-top: 5px;
-        }
-
-        .active {
-            background-color: #f2f2f2;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
 </head>
-<body>
-    <h2>Automatic Caesar Cipher Breaker</h2>
-    <label for="text">Cipher Text:</label>
-    <textarea id="text" placeholder="Enter the cipher text">GUVF VF FBZR FNZCYR GRKG URER.</textarea><br>
-    <label for="shift">Shift: <span id="shift">Up</span></label><br>
-    <button onclick="app.doBreak()">Break Code</button>
-    <button onclick="app.doClear()">Clear</button><br>
-    <div id="guesses"></div>
 
-    <script src="main.js"></script>
+<body>
+    <h1 style="text-align: center;">Auto Ceasar Cipher Breaker</h1>
+    <table class="noborder">
+        <tbody>
+            <tr>
+                <td><label for="cipher">Cipher text:</label></td>
+                <td><textarea id="cipher" rows="5" oninput="app.doBreak();">Ity nslz Gtpe Ylx.</textarea></td>
+            </tr>
+            <tr>
+                <td><label for="original">Original text (guess):</label></td>
+                <td><textarea id="original" rows="5"></textarea></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button onclick="app.doBreak();">Break cipher</button></td>
+            </tr>
+            <tr>
+                <td>Shift:</td>
+                <td>
+                    <button onclick="app.doShift(-1);">-</button>
+                    <span id="shift"></span>
+                    <button onclick="app.doShift(+1);">+</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Best guesses:</td>
+                <td>
+                    <table class="col1right col2right" style="font-size:70%; margin-top:0em">
+                        <thead>
+                            <tr>
+                                <th>Shift</th>
+                                <th colspan="2">Entropy per letter (bits) <span style="font-weight:normal">(lower is
+                                        better)</span></th>
+                            </tr>
+                        </thead>
+                        <tbody id="guesses"></tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </body>
+
 </html>
